@@ -7,7 +7,12 @@ const UsersList = (props) => {
         <Card className={classes.users}>
             <ul>
                 {props.users.map((user) => (
-                    <li key={user.id}>
+                    <li
+                        key={user.id}
+                        onClick={() => {
+                            console.log(user.name,user.age);
+                            props.clicked(user);
+                        }}>
                         {user.name} ({user.age} years old)
                     </li>
                 ))}

@@ -10,15 +10,20 @@ function App() {
     setUsersList((prevState) => {
       return [
         ...prevState,
-        { name: uName, age: uAge, id: Math.random().toString()}
+        { name: uName, age: uAge, id: Math.random().toString() }
       ];
     });
+  }
+
+  const deleteHandler = (props) => {
+    const filteredUsers = usersList.filter((user) => user.id !== props.id);
+    setUsersList([...filteredUsers]);
   }
 
   return (
     <div >
       <AddUser onAddUser={onAddUserHandler} />
-      <UsersList users={usersList} />
+      {(usersList.length === 0) ? null : <UsersList users={usersList} clicked={deleteHandler} />}
     </div>
   );
 }
