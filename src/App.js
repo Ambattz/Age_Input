@@ -21,10 +21,10 @@ function App() {
   }
 
   return (
-    <div >
+    <React.Fragment >
       <AddUser onAddUser={onAddUserHandler} />
       {(usersList.length === 0) ? null : <UsersList users={usersList} clicked={deleteHandler} />}
-    </div>
+    </React.Fragment>
   );
 }
 

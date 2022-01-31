@@ -5,7 +5,7 @@ import classes from './ErrorModel.module.css';
 
 const ErrorModel = (props) => {
     return (
-        <div>
+        <React.Fragment>
             <div className={classes.backdrop} onClick={props.clicked} />
             <Card className={classes.modal}>
                 <header className={classes.header}>
@@ -18,9 +18,8 @@ const ErrorModel = (props) => {
                     <Button onClick={props.clicked}>Okay</Button>
                 </footer>
             </Card>
-        </div>
+        </React.Fragment>
     );
 }
-
 
 export default ErrorModel;
